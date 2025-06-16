@@ -1,4 +1,4 @@
-import { Transporter } from "nodemailer";
+import { type Transporter } from "nodemailer";
 import mjml2html from "mjml";
 import { to } from "await-to-ts";
 

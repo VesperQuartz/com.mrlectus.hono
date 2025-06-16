@@ -2,9 +2,9 @@ import { betterAuth } from "better-auth";
 import { bearer, haveIBeenPwned, openAPI } from "better-auth/plugins";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "./db";
-import { MailServer } from "@/services/mail";
 import { transporter } from "./mail";
 import to from "await-to-ts";
+import { MailServer } from "@/services/mail";
 
 export const auth = betterAuth({
   rateLimit: {
@@ -16,6 +16,26 @@ export const auth = betterAuth({
     enabled: true,
     minPasswordLength: 6,
     requireEmailVerification: true,
+    password: {
+      hash: async (password: string) => {
+        const [hashError, hashedPassword] = await to(
+          Bun.password.hash(password),
+        );
+        if (hashError) {
+          throw new Error(`Failed to hash password ${hashError.message}`);
+        }
+        return hashedPassword;
+      },
+      verify: async (data: { hash: string; password: string }) => {
+        const [verifyError, verified] = await to(
+          Bun.password.verify(data.password, data.hash),
+        );
+        if (verifyError) {
+          throw new Error(`Failed to verify password ${verifyError.message}`);
+        }
+        return verified;
+      },
+    },
   },
   emailVerification: {
     sendOnSignUp: true,

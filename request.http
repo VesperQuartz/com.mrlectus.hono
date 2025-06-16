@@ -1,0 +1,26 @@
+### signup
+POST {{BETTER_AUTH_URL}}/api/auth/sign-up/email
+Content-Type: application/json
+
+{
+  "name": "Chinwe",
+  "email": "lilbrown3000+chinwe@gmail.com",
+  "password": "C00ljm#U",
+  "callbackURL": "/api/hello"
+}
+
+
+### login
+POST {{BETTER_AUTH_URL}}/api/auth/sign-in/email
+Content-Type: application/json
+
+{
+  "email": "lois@gmail.com",
+  "password": "p##ssw0r#"
+}
+
+### Get session
+GET {{BETTER_AUTH_URL}}/api/auth/get-session
+
+### Sign out
+POST {{BETTER_AUTH_URL}}/api/auth/sign-out
