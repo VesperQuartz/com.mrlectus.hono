@@ -1,0 +1,42 @@
+{
+	"name": "hono-backend",
+	"scripts": {
+		"db:push": "drizzle-kit push",
+		"db:migrate": "drizzle-kit migrate",
+		"db:generate": "drizzle-kit generate",
+		"auth:generate": "bunx @better-auth/cli generate --output ./src/repo/schema/auth.schema.ts",
+		"lint": "biome check",
+		"format": "biome format",
+		"dev": "bun run --hot src/index.ts"
+	},
+	"dependencies": {
+		"@hono/standard-validator": "^0.2.2",
+		"@hono/zod-validator": "^0.8.0",
+		"@maca134/hono-passport": "^1.2.2",
+		"@neondatabase/serverless": "^1.1.0",
+		"@orpc/server": "^1.14.3",
+		"@scalar/hono-api-reference": "^0.10.16",
+		"await-to-ts": "^1.0.6",
+		"better-auth": "^1.6.11",
+		"date-fns": "^4.2.1",
+		"drizzle-orm": "^0.45.2",
+		"effect": "^3.21.2",
+		"hono": "^4.12.21",
+		"hono-openapi": "^1.3.0",
+		"hono-pino": "^0.10.3",
+		"ky": "^2.0.2",
+		"mjml": "^5.2.2",
+		"nodemailer": "^8.0.7",
+		"pino": "^10.3.1",
+		"zod": "^4.4.3",
+		"zod-openapi": "5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.15",
+		"@types/bun": "latest",
+		"@types/mjml": "^5.0.0",
+		"@types/nodemailer": "^8.0.0",
+		"@types/passport-http-bearer": "^1.0.42",
+		"drizzle-kit": "^0.31.10"
+	}
+}
