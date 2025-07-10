@@ -1,0 +1,97 @@
+import fs from "node:fs/promises";
+import { Scalar } from "@scalar/hono-api-reference";
+import { Hono } from "hono";
+import { cors } from "hono/cors";
+import { logger } from "hono/logger";
+import { poweredBy } from "hono/powered-by";
+import { prettyJSON } from "hono/pretty-json";
+import { requestId } from "hono/request-id";
+import { secureHeaders } from "hono/secure-headers";
+import { openAPISpecs } from "hono-openapi";
+import { type AuthEnv, auth } from "@/lib/auth";
+import { todo } from "./routes/todo";
+
+const app = new Hono<{
+	Variables: AuthEnv;
+}>().basePath("/api");
+
+app.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw));
+
+app.use(poweredBy());
+app.use(
+	logger((str: string, ...rest: string[]) => {
+		fs.appendFile("logs/log.txt", `${new Date().toUTCString()} ${str}\n`);
+	}),
+);
+app.use(secureHeaders());
+app.use(requestId());
+app.use(prettyJSON());
+app.use(
+	cors({
+		origin: ["http://localhost:4000", "http://localhost:3002"],
+		credentials: true,
+	}),
+);
+
+app.use("*", async (c, next) => {
+	const session = await auth.api.getSession({ headers: c.req.raw.headers });
+
+	if (!session) {
+		c.set("user", null);
+		c.set("session", null);
+		return next();
+	}
+
+	c.set("user", session.user);
+	c.set("session", session.session);
+	return next();
+});
+
+app.get("/hello", (c) => {
+	return c.text("Hello Hono!");
+});
+
+app.use("*", async (c, next) => {
+	const session = c.get("session");
+	const allowedPath = ["/api/docs", "/api/openapi"];
+	if (!session) {
+		const pathname = c.req.path;
+		console.log(pathname, "Path");
+		if (allowedPath.includes(pathname)) {
+			return next();
+		}
+		return c.json({ message: "unauthorized" }, 401);
+	}
+	return next();
+});
+
+app.route("/", todo);
+
+app.get(
+	"/openapi",
+	openAPISpecs(app, {
+		documentation: {
+			info: {
+				title: "Hono",
+				version: "1.0.0",
+				description: "API for greeting users",
+			},
+			servers: [
+				{
+					url: "http://localhost:3000",
+					description: "Local server",
+				},
+			],
+		},
+	}),
+);
+
+app.get(
+	"/docs",
+	Scalar({
+		theme: "fastify",
+		url: "/api/openapi",
+	}),
+);
+
+export default app;
