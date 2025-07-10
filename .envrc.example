@@ -1,0 +1,6 @@
+export BETTER_AUTH_SECRET=
+export BETTER_AUTH_URL=http://localhost:3000
+export DB_URL=
+export DB_TOKEN=
+export GMAIL_USER=
+export GMAIL_PASS=""
