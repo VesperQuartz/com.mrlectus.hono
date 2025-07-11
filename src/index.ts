@@ -53,7 +53,7 @@ app.get("/hello", (c) => {
 
 app.use("*", async (c, next) => {
 	const session = c.get("session");
-	const allowedPath = ["/api/docs", "/api/openapi"];
+	const allowedPath = ["/api/docs", "/api/openapi", "/api/healthcheck"];
 	if (!session) {
 		const pathname = c.req.path;
 		console.log(pathname, "Path");
@@ -66,6 +66,13 @@ app.use("*", async (c, next) => {
 });
 
 app.route("/", todo);
+
+app.get("/healthcheck", (c) => {
+	return c.json({
+		context: c.get("requestId"),
+		message: "Works fine",
+	});
+});
 
 app.get(
 	"/openapi",
