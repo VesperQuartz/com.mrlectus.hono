@@ -3,7 +3,7 @@ FROM oven/bun:canary-alpine AS dev
 WORKDIR /app
 COPY package.json ./
 COPY bun.lock* ./
-COPY --from=dev /app/.env .
+COPY . .
 RUN bun install
 EXPOSE 3000
 CMD ["bun", "run", "dev"]
@@ -12,6 +12,7 @@ CMD ["bun", "run", "dev"]
 FROM dev AS build
 
 RUN bun install
+RUN ls
 ENV NODE_ENV=production
 RUN bun build ./src/index.ts --outdir ./out --minify --splitting
 

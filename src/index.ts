@@ -1,6 +1,8 @@
 import fs from "node:fs/promises";
 import { Scalar } from "@scalar/hono-api-reference";
+import type { ServerWebSocket } from "bun";
 import { Hono } from "hono";
+import { createBunWebSocket } from "hono/bun";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { poweredBy } from "hono/powered-by";
@@ -33,6 +35,7 @@ app.use(
 	}),
 );
 
+const { websocket, upgradeWebSocket } = createBunWebSocket<ServerWebSocket>();
 app.use("*", async (c, next) => {
 	const session = await auth.api.getSession({ headers: c.req.raw.headers });
 
@@ -101,4 +104,28 @@ app.get(
 	}),
 );
 
-export default app;
+app.get(
+	"/ws",
+	upgradeWebSocket(async (c) => {
+		const user = c.get("user");
+		const groupId = c.req.header("X-group-id");
+		return {
+			onOpen: (evt, ws) => {
+				ws.raw?.subscribe(groupId!);
+				const msg = `user ${user.name} has entered group ${groupId}`;
+				ws.raw?.publishText(groupId!, msg);
+			},
+			onMessage: async (evt, ws) => {
+				ws.raw?.publishText(groupId!, evt.data.toString());
+			},
+			onClose: () => {
+				console.log("connection closed");
+			},
+		};
+	}),
+);
+
+export default {
+	fetch: app.fetch,
+	websocket,
+};
