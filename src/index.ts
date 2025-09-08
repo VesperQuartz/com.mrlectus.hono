@@ -1,8 +1,7 @@
 import fs from "node:fs/promises";
 import { Scalar } from "@scalar/hono-api-reference";
-import type { ServerWebSocket } from "bun";
 import { Hono } from "hono";
-import { createBunWebSocket } from "hono/bun";
+import { upgradeWebSocket, websocket } from "hono/bun";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { poweredBy } from "hono/powered-by";
@@ -35,18 +34,17 @@ app.use(
 	}),
 );
 
-const { websocket, upgradeWebSocket } = createBunWebSocket<ServerWebSocket>();
-app.use("*", async (c, next) => {
-	const session = await auth.api.getSession({ headers: c.req.raw.headers });
+app.use("*", async (ctx, next) => {
+	const session = await auth.api.getSession({ headers: ctx.req.raw.headers });
 
 	if (!session) {
-		c.set("user", null);
-		c.set("session", null);
+		ctx.set("user", null);
+		ctx.set("session", null);
 		return next();
 	}
 
-	c.set("user", session.user);
-	c.set("session", session.session);
+	ctx.set("user", session.user);
+	ctx.set("session", session.session);
 	return next();
 });
 
