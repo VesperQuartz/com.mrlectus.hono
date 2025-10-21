@@ -19,11 +19,7 @@ const app = new Hono<{
 app.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw));
 
 app.use(poweredBy());
-// app.use(
-// 	logger((str: string, ...rest: string[]) => {
-// 		fs.appendFile("logs/log.txt", `${new Date().toUTCString()} ${str}\n`);
-// 	}),
-// );
+app.use(logger());
 app.use(secureHeaders());
 app.use(requestId());
 app.use(prettyJSON());
