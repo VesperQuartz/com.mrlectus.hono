@@ -8,6 +8,7 @@
 		"dev": "bun run --hot src/index.ts"
 	},
 	"dependencies": {
+		"@hono/standard-validator": "^0.1.5",
 		"@hono/zod-validator": "^0.6.0",
 		"@maca134/hono-passport": "^1.2.2",
 		"@neondatabase/serverless": "^1.0.0",

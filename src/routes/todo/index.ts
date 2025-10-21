@@ -1,18 +1,16 @@
 import { Hono } from "hono";
 import { getConnInfo } from "hono/bun";
-import { describeRoute } from "hono-openapi";
-import { resolver, validator as zValidator } from "hono-openapi/zod";
+import { describeRoute, resolver, validator } from "hono-openapi";
 import { z } from "zod";
 import { type AuthEnv } from "@/lib/auth";
-import "zod-openapi/extend";
 
 export const todo = new Hono<{ Variables: AuthEnv }>().basePath("/todo");
 
 const todoSchema = z.object({
-	id: z.string().uuid().optional().openapi({ example: Bun.randomUUIDv7() }),
+	id: z.uuidv7().optional().meta({ example: Bun.randomUUIDv7() }),
 	status: z.enum(["pending", "done"]).default("pending").optional(),
-	task: z.string().openapi({ example: "Going to the Gym" }),
-	userId: z.string().cuid2().optional(),
+	task: z.string().meta({ example: "Going to the Gym" }),
+	userId: z.cuid().optional(),
 });
 
 type Todo = z.infer<typeof todoSchema>;
@@ -55,7 +53,7 @@ todo.post(
 			},
 		},
 	}),
-	zValidator("json", todoSchema),
+	validator("json", todoSchema),
 	async (c) => {
 		const user = c.get("user");
 		const { task } = c.req.valid("json");

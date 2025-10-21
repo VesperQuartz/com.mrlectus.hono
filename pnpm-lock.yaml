@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hono/standard-validator':
+        specifier: ^0.1.5
+        version: 0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.1)
       '@hono/zod-validator':
         specifier: ^0.6.0
         version: 0.6.0(hono@4.10.1)(zod@4.1.12)
@@ -37,7 +40,7 @@ importers:
         version: 4.10.1
       hono-openapi:
         specifier: ^1.1.0
-        version: 1.1.0(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.1)(openapi-types@12.1.3)
+        version: 1.1.0(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.1))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.1)(openapi-types@12.1.3)
       ky:
         specifier: ^1.12.0
         version: 1.12.0
@@ -525,6 +528,12 @@ packages:
 
   '@hexagon/base64@1.1.28':
     resolution: {integrity: sha512-lhqDEAvWixy3bZ+UOYbPwUbBkwBq5C1LAJ/xPC8Oi+lL54oyakv/npbA0aU2hgCsx/1NUd4IBvV03+aUBWxerw==}
+
+  '@hono/standard-validator@0.1.5':
+    resolution: {integrity: sha512-EIyZPPwkyLn6XKwFj5NBEWHXhXbgmnVh2ceIFo5GO7gKI9WmzTjPDKnppQB0KrqKeAkq3kpoW4SIbu5X1dgx3w==}
+    peerDependencies:
+      '@standard-schema/spec': 1.0.0
+      hono: '>=3.9.0'
 
   '@hono/zod-validator@0.6.0':
     resolution: {integrity: sha512-3aVk+cvuOE/9D6H2ugaG1kt14NT9rFyZzwRW6+aaPhMufMSiyKNvb/7pscZ/U302F8cTPD2TSTJiOUmx6TPqGg==}
@@ -2517,6 +2526,11 @@ snapshots:
 
   '@hexagon/base64@1.1.28': {}
 
+  '@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.1)':
+    dependencies:
+      '@standard-schema/spec': 1.0.0
+      hono: 4.10.1
+
   '@hono/zod-validator@0.6.0(hono@4.10.1)(zod@4.1.12)':
     dependencies:
       hono: 4.10.1
@@ -3492,13 +3506,14 @@ snapshots:
 
   he@1.2.0: {}
 
-  hono-openapi@1.1.0(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.1)(openapi-types@12.1.3):
+  hono-openapi@1.1.0(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.1))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.1)(openapi-types@12.1.3):
     dependencies:
       '@standard-community/standard-json': 0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12)
       '@standard-community/standard-openapi': 0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12)
       '@types/json-schema': 7.0.15
       openapi-types: 12.1.3
     optionalDependencies:
+      '@hono/standard-validator': 0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.1)
       hono: 4.10.1
 
   hono@4.10.1: {}

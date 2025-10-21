@@ -8,7 +8,7 @@ import { poweredBy } from "hono/powered-by";
 import { prettyJSON } from "hono/pretty-json";
 import { requestId } from "hono/request-id";
 import { secureHeaders } from "hono/secure-headers";
-import { openAPISpecs } from "hono-openapi";
+import { openAPIRouteHandler } from "hono-openapi";
 import { type AuthEnv, auth } from "@/lib/auth";
 import { todo } from "./routes/todo";
 
@@ -77,7 +77,7 @@ app.get("/healthcheck", (c) => {
 
 app.get(
 	"/openapi",
-	openAPISpecs(app, {
+	openAPIRouteHandler(app, {
 		documentation: {
 			info: {
 				title: "Hono",
