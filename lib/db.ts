@@ -4,6 +4,7 @@ import { env } from "@/config/env";
 import * as authschema from "@/src/repo/schema/auth.schema";
 import * as schema from "@/src/repo/schema/schema";
 
+console.log(env);
 const sql = neon(env.DB_URL);
 export const db = drizzle({
 	client: sql,

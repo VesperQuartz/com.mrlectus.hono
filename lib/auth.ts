@@ -1,10 +1,11 @@
 import to from "await-to-ts";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { bearer, haveIBeenPwned, openAPI } from "better-auth/plugins";
+import { admin, bearer, haveIBeenPwned, openAPI } from "better-auth/plugins";
 import { MailServer } from "@/services/mail";
 import { db } from "./db";
 import { transporter } from "./mail";
+import { ac, adminRole, customRole, userRole } from "./permission";
 
 export const auth = betterAuth({
 	rateLimit: {
@@ -39,10 +40,34 @@ export const auth = betterAuth({
 	plugins: [
 		bearer(),
 		openAPI(),
+		admin({
+			ac,
+			roles: {
+				admin: adminRole,
+				user: userRole,
+				custom: customRole,
+			},
+			defaultRole: "user",
+			adminRoles: ["admin", "superadmin"],
+		}),
 		haveIBeenPwned({
 			customPasswordCompromisedMessage: "Please choose a more secure password.",
 		}),
 	],
+	databaseHooks: {
+		user: {
+			create: {
+				before: async (user, ctx) => {
+					if (!ctx?.body?.role) {
+						return {
+							data: { ...user },
+						};
+					}
+					return { data: { ...user, role: ctx?.body?.role } };
+				},
+			},
+		},
+	},
 });
 
 export type AuthEnv = {
