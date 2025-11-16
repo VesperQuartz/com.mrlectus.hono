@@ -1,13 +1,12 @@
 import { Scalar } from "@scalar/hono-api-reference";
 import { upgradeWebSocket, websocket } from "hono/bun";
 import { cors } from "hono/cors";
-import { logger } from "hono/logger";
 import { poweredBy } from "hono/powered-by";
 import { prettyJSON } from "hono/pretty-json";
 import { requestId } from "hono/request-id";
 import { secureHeaders } from "hono/secure-headers";
 import { openAPIRouteHandler } from "hono-openapi";
-import { PinoLogger, pinoLogger } from "hono-pino";
+import { pinoLogger } from "hono-pino";
 import pino from "pino";
 import { type AuthEnv, auth } from "@/lib/auth";
 import { factory } from "./factory";
@@ -18,7 +17,6 @@ const app = factory.createApp().basePath("/api");
 app.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw));
 
 app.use(poweredBy());
-app.use(logger());
 app.use(secureHeaders());
 app.use(requestId());
 app.use(
