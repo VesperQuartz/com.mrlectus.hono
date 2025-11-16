@@ -29,7 +29,7 @@ app.use(
 				target: "hono-pino/debug-log",
 			},
 		}),
-		contextKey: "Logger" as const,
+		contextKey: "logger" as const,
 	}),
 );
 app.use(prettyJSON());
