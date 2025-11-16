@@ -1,6 +1,4 @@
-import fs from "node:fs/promises";
 import { Scalar } from "@scalar/hono-api-reference";
-import { Hono } from "hono";
 import { upgradeWebSocket, websocket } from "hono/bun";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
@@ -9,12 +7,13 @@ import { prettyJSON } from "hono/pretty-json";
 import { requestId } from "hono/request-id";
 import { secureHeaders } from "hono/secure-headers";
 import { openAPIRouteHandler } from "hono-openapi";
+import { PinoLogger, pinoLogger } from "hono-pino";
+import pino from "pino";
 import { type AuthEnv, auth } from "@/lib/auth";
+import { factory } from "./factory";
 import { todo } from "./routes/todo";
 
-const app = new Hono<{
-	Variables: AuthEnv;
-}>().basePath("/api");
+const app = factory.createApp().basePath("/api");
 
 app.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw));
 
@@ -22,6 +21,17 @@ app.use(poweredBy());
 app.use(logger());
 app.use(secureHeaders());
 app.use(requestId());
+app.use(
+	pinoLogger({
+		pino: pino({
+			level: "info",
+			transport: {
+				target: "hono-pino/debug-log",
+			},
+		}),
+		contextKey: "Logger" as const,
+	}),
+);
 app.use(prettyJSON());
 app.use(
 	cors({
@@ -45,6 +55,8 @@ app.use("*", async (ctx, next) => {
 });
 
 app.get("/hello", (c) => {
+	const logger = c.get("logger");
+	logger.info("Hello");
 	return c.text("Hello Hono!");
 });
 
