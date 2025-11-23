@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@hono/standard-validator':
-        specifier: ^0.1.5
-        version: 0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.6)
+        specifier: ^0.2.0
+        version: 0.2.0(@standard-schema/spec@1.0.0)(hono@4.10.6)
       '@hono/zod-validator':
-        specifier: ^0.7.4
-        version: 0.7.4(hono@4.10.6)(zod@4.1.12)
+        specifier: ^0.7.5
+        version: 0.7.5(hono@4.10.6)(zod@4.1.12)
       '@maca134/hono-passport':
         specifier: ^1.2.2
         version: 1.2.2(@maca134/hono-session@1.2.0(hono@4.10.6))(hono@4.10.6)
@@ -21,14 +21,14 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2
       '@scalar/hono-api-reference':
-        specifier: ^0.9.24
-        version: 0.9.24(hono@4.10.6)
+        specifier: ^0.9.25
+        version: 0.9.25(hono@4.10.6)
       await-to-ts:
         specifier: ^1.0.6
         version: 1.0.6
       better-auth:
-        specifier: ^1.3.34
-        version: 1.3.34
+        specifier: ^1.4.1
+        version: 1.4.1
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -40,7 +40,7 @@ importers:
         version: 4.10.6
       hono-openapi:
         specifier: ^1.1.1
-        version: 1.1.1(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.6))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.6)(openapi-types@12.1.3)
+        version: 1.1.1(@hono/standard-validator@0.2.0(@standard-schema/spec@1.0.0)(hono@4.10.6))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.6)(openapi-types@12.1.3)
       hono-pino:
         specifier: ^0.10.3
         version: 0.10.3(hono@4.10.6)(pino@10.1.0)
@@ -48,8 +48,8 @@ importers:
         specifier: ^1.14.0
         version: 1.14.0
       mjml:
-        specifier: ^4.17.0
-        version: 4.17.0
+        specifier: ^4.17.1
+        version: 4.17.1
       nodemailer:
         specifier: ^7.0.10
         version: 7.0.10
@@ -73,8 +73,8 @@ importers:
         specifier: ^4.7.4
         version: 4.7.4
       '@types/nodemailer':
-        specifier: ^7.0.3
-        version: 7.0.3
+        specifier: ^7.0.4
+        version: 7.0.4
       '@types/passport-http-bearer':
         specifier: ^1.0.42
         version: 1.0.42
@@ -213,18 +213,20 @@ packages:
     resolution: {integrity: sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==}
     engines: {node: '>=6.9.0'}
 
-  '@better-auth/core@1.3.34':
-    resolution: {integrity: sha512-rt/Bgl0Xa8OQ2DUMKCZEJ8vL9kUw4NCJsBP9Sj9uRhbsK8NEMPiznUOFMkUY2FvrslvfKN7H/fivwyHz9c7HzQ==}
+  '@better-auth/core@1.4.1':
+    resolution: {integrity: sha512-N4kyRdA472WGLoCjsJpUeYdZZvpoBDgP65hUeQQxTQYwBTqD9O17Tokax9CdNbkb4g34sTfxaJCfcncE3Hy4SA==}
     peerDependencies:
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
-      better-call: 1.0.19
+      better-call: 1.1.0
       jose: ^6.1.0
       kysely: ^0.28.5
       nanostores: ^1.0.1
 
-  '@better-auth/telemetry@1.3.34':
-    resolution: {integrity: sha512-aQZ3wN90YMqV49diWxAMe1k7s2qb55KCsedCZne5PlgCjU4s3YtnqyjC5FEpzw2KY8l8rvR7DMAsDl13NjObKA==}
+  '@better-auth/telemetry@1.4.1':
+    resolution: {integrity: sha512-yNeazXYvMbyuCe1AA6tYWsJEKgcS7gF9PmmACmrPVhVBe1ncDhVfWMZ++YCmA2h8hjkR9755ZyofiYRPbj+kXQ==}
+    peerDependencies:
+      '@better-auth/core': 1.4.1
 
   '@better-auth/utils@0.3.0':
     resolution: {integrity: sha512-W+Adw6ZA6mgvnSnhOki270rwJ42t4XzSK6YWGF//BbVXL6SwCLWfyzBc1lN2m/4RM28KubdBKQ4X5VMoLRNPQw==}
@@ -531,17 +533,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@hexagon/base64@1.1.28':
-    resolution: {integrity: sha512-lhqDEAvWixy3bZ+UOYbPwUbBkwBq5C1LAJ/xPC8Oi+lL54oyakv/npbA0aU2hgCsx/1NUd4IBvV03+aUBWxerw==}
-
-  '@hono/standard-validator@0.1.5':
-    resolution: {integrity: sha512-EIyZPPwkyLn6XKwFj5NBEWHXhXbgmnVh2ceIFo5GO7gKI9WmzTjPDKnppQB0KrqKeAkq3kpoW4SIbu5X1dgx3w==}
+  '@hono/standard-validator@0.2.0':
+    resolution: {integrity: sha512-pFq0UVAnjzXcDAgqFpDeVL3MOUPrlIh/kPqBDvbCYoThVhhS+Vf37VcdsakdOFFGiqoiYVxp3LifXFhGhp/rgQ==}
     peerDependencies:
       '@standard-schema/spec': 1.0.0
       hono: '>=3.9.0'
 
-  '@hono/zod-validator@0.7.4':
-    resolution: {integrity: sha512-biKGn3BRJVaftZlIPMyK+HCe/UHAjJ6sH0UyXe3+v0OcgVr9xfImDROTJFLtn9e3XEEAHGZIM9U6evu85abm8Q==}
+  '@hono/zod-validator@0.7.5':
+    resolution: {integrity: sha512-n4l4hutkfYU07PzRUHBOVzUEn38VSfrh+UVE5d0w4lyfWDOEhzxIupqo5iakRiJL44c3vTuFJBvcmUl8b9agIA==}
     peerDependencies:
       hono: '>=3.9.0'
       zod: ^3.25.0 || ^4.0.0
@@ -549,9 +548,6 @@ packages:
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
-
-  '@levischuck/tiny-cbor@0.2.11':
-    resolution: {integrity: sha512-llBRm4dT4Z89aRsm6u2oEZ8tfwL/2l6BwpZ7JcyieouniDECM5AqNgr/y08zalEIvW3RSK4upYyybDcmjXqAow==}
 
   '@maca134/hono-passport@1.2.2':
     resolution: {integrity: sha512-BekI1f0U1dw0vFLj7MHIeC2VBx9SoNPpqlkI72chbUxQivI2ob4sJ9+wK6q2hKNaUjHyIDfOsjDTIuGXQmlzaQ==}
@@ -581,42 +577,6 @@ packages:
   '@one-ini/wasm@0.1.1':
     resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
 
-  '@peculiar/asn1-android@2.5.0':
-    resolution: {integrity: sha512-t8A83hgghWQkcneRsgGs2ebAlRe54ns88p7ouv8PW2tzF1nAW4yHcL4uZKrFpIU+uszIRzTkcCuie37gpkId0A==}
-
-  '@peculiar/asn1-cms@2.5.0':
-    resolution: {integrity: sha512-p0SjJ3TuuleIvjPM4aYfvYw8Fk1Hn/zAVyPJZTtZ2eE9/MIer6/18ROxX6N/e6edVSfvuZBqhxAj3YgsmSjQ/A==}
-
-  '@peculiar/asn1-csr@2.5.0':
-    resolution: {integrity: sha512-ioigvA6WSYN9h/YssMmmoIwgl3RvZlAYx4A/9jD2qaqXZwGcNlAxaw54eSx2QG1Yu7YyBC5Rku3nNoHrQ16YsQ==}
-
-  '@peculiar/asn1-ecc@2.5.0':
-    resolution: {integrity: sha512-t4eYGNhXtLRxaP50h3sfO6aJebUCDGQACoeexcelL4roMFRRVgB20yBIu2LxsPh/tdW9I282gNgMOyg3ywg/mg==}
-
-  '@peculiar/asn1-pfx@2.5.0':
-    resolution: {integrity: sha512-Vj0d0wxJZA+Ztqfb7W+/iu8Uasw6hhKtCdLKXLG/P3kEPIQpqGI4P4YXlROfl7gOCqFIbgsj1HzFIFwQ5s20ug==}
-
-  '@peculiar/asn1-pkcs8@2.5.0':
-    resolution: {integrity: sha512-L7599HTI2SLlitlpEP8oAPaJgYssByI4eCwQq2C9eC90otFpm8MRn66PpbKviweAlhinWQ3ZjDD2KIVtx7PaVw==}
-
-  '@peculiar/asn1-pkcs9@2.5.0':
-    resolution: {integrity: sha512-UgqSMBLNLR5TzEZ5ZzxR45Nk6VJrammxd60WMSkofyNzd3DQLSNycGWSK5Xg3UTYbXcDFyG8pA/7/y/ztVCa6A==}
-
-  '@peculiar/asn1-rsa@2.5.0':
-    resolution: {integrity: sha512-qMZ/vweiTHy9syrkkqWFvbT3eLoedvamcUdnnvwyyUNv5FgFXA3KP8td+ATibnlZ0EANW5PYRm8E6MJzEB/72Q==}
-
-  '@peculiar/asn1-schema@2.5.0':
-    resolution: {integrity: sha512-YM/nFfskFJSlHqv59ed6dZlLZqtZQwjRVJ4bBAiWV08Oc+1rSd5lDZcBEx0lGDHfSoH3UziI2pXt2UM33KerPQ==}
-
-  '@peculiar/asn1-x509-attr@2.5.0':
-    resolution: {integrity: sha512-9f0hPOxiJDoG/bfNLAFven+Bd4gwz/VzrCIIWc1025LEI4BXO0U5fOCTNDPbbp2ll+UzqKsZ3g61mpBp74gk9A==}
-
-  '@peculiar/asn1-x509@2.5.0':
-    resolution: {integrity: sha512-CpwtMCTJvfvYTFMuiME5IH+8qmDe3yEWzKHe7OOADbGfq7ohxeLaXwQo0q4du3qs0AII3UbLCvb9NF/6q0oTKQ==}
-
-  '@peculiar/x509@1.14.0':
-    resolution: {integrity: sha512-Yc4PDxN3OrxUPiXgU63c+ZRXKGE8YKF2McTciYhUHFtHVB0KMnjeFSU0qpztGhsp4P0uKix4+J2xEpIEDu8oXg==}
-
   '@pinojs/redact@0.4.0':
     resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
 
@@ -624,30 +584,19 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@scalar/core@0.3.22':
-    resolution: {integrity: sha512-6lzeRkvgkukSgge35kvxJKiJBny4rdGSaLTNzn/sF1F6JRfUo7I0AgqFxxSZWMD+EG4kGyNxAz0zciDSx2Cjvw==}
+  '@scalar/core@0.3.23':
+    resolution: {integrity: sha512-hop7LVR3MKB2VpS8dly3gmmbB3lBGxQRtL0pBaC77zFMRHoBv1DuB2bj8l4gxd5grzitJ1LsYduvywLAMY9F6g==}
     engines: {node: '>=20'}
 
-  '@scalar/hono-api-reference@0.9.24':
-    resolution: {integrity: sha512-NjPY3iMm/FqYRXAgr6V7qBhJGbSUQ8hbijFUMuqZo4pIjGEUNLeB5L9U2Gh4cDIPPWeso8mlc16jaX7dV0FrPw==}
+  '@scalar/hono-api-reference@0.9.25':
+    resolution: {integrity: sha512-ZEQAhvVU/FXdJs8+rVXdfWjwzkE+M6Zr+4W+zNhy8DF17BIpxFXfVL7i3OxK1V/4EtkTplkETjYGTR4ju3RFZw==}
     engines: {node: '>=20'}
     peerDependencies:
       hono: ^4.10.3
 
-  '@scalar/openapi-types@0.5.1':
-    resolution: {integrity: sha512-8g7s9lPolyDFtijyh3Ob459tpezPuZbkXoFgJwBTHjPZ7ap+TvOJTvLk56CFwxVBVz2BxCzWJqxYyy3FUdeLoA==}
+  '@scalar/types@0.5.0':
+    resolution: {integrity: sha512-imDMuTieOc5kHM9/Kt/1lmiI5ZtusuaYlzsXTP99IsWvD8mJ7ivF73lPBRj4PKtg4vY+ta5CO/vJpvnCYandRg==}
     engines: {node: '>=20'}
-
-  '@scalar/types@0.4.0':
-    resolution: {integrity: sha512-vOD1GZez7kPdVA+UQit05QE9dbALfevhK9kqRTsqcPX7FvvZ9eQWSNl1GKmKtmRiAZGThv2agM5AvHRxkH2JSw==}
-    engines: {node: '>=20'}
-
-  '@simplewebauthn/browser@13.2.2':
-    resolution: {integrity: sha512-FNW1oLQpTJyqG5kkDg5ZsotvWgmBaC6jCHR7Ej0qUNep36Wl9tj2eZu7J5rP+uhXgHaLk+QQ3lqcw2vS5MX1IA==}
-
-  '@simplewebauthn/server@13.2.2':
-    resolution: {integrity: sha512-HcWLW28yTMGXpwE9VLx9J+N2KEUaELadLrkPEEI9tpI5la70xNEVEsu/C+m3u7uoq4FulLqZQhgBCzR9IZhFpA==}
-    engines: {node: '>=20.0.0'}
 
   '@smithy/abort-controller@4.2.3':
     resolution: {integrity: sha512-xWL9Mf8b7tIFuAlpjKtRPnHrR8XVrwTj5NPYO/QwZPtc0SDLsPxb56V5tzi5yspSMytISHybifez+4jlrx0vkQ==}
@@ -942,8 +891,8 @@ packages:
   '@types/node@24.9.1':
     resolution: {integrity: sha512-QoiaXANRkSXK6p0Duvt56W208du4P9Uye9hWLWgGMDTEoKPhuenzNcC4vGUmrNkiOKTlIrBoyNQYNpSwfEZXSg==}
 
-  '@types/nodemailer@7.0.3':
-    resolution: {integrity: sha512-fC8w49YQ868IuPWRXqPfLf+MuTRex5Z1qxMoG8rr70riqqbOp2F5xgOKE9fODEBPzpnvjkJXFgK6IL2xgMSTnA==}
+  '@types/nodemailer@7.0.4':
+    resolution: {integrity: sha512-ee8fxWqOchH+Hv6MDDNNy028kwvVnLplrStm4Zf/3uHWw5zzo8FoYYeffpJtGs2wWysEumMH0ZIdMGMY1eMAow==}
 
   '@types/passport-http-bearer@1.0.42':
     resolution: {integrity: sha512-cGezyf9hy3Cth+zWS779FR9XYhIX/DExsVZURqcSeUU/nhj0Aw8PUhvCyfS35ScwOSd5AFiFhtfWmqHa/2aYZg==}
@@ -1000,10 +949,6 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  asn1js@3.0.6:
-    resolution: {integrity: sha512-UOCGPYbl0tv8+006qks/dTgV9ajs97X2p0FAbyS2iyCRrmLSRolDaHdp+v/CLgnzHc3fVB+CwYiUmei7ndFcgA==}
-    engines: {node: '>=12.0.0'}
-
   atomic-sleep@1.0.0:
     resolution: {integrity: sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==}
     engines: {node: '>=8.0.0'}
@@ -1017,8 +962,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  better-auth@1.3.34:
-    resolution: {integrity: sha512-LWA52SlvnUBJRbN8VLSTLILPomZY3zZAiLxVJCeSQ5uVmaIKkMBhERitkfJcXB9RJcfl4uP+3EqKkb6hX1/uiw==}
+  better-auth@1.4.1:
+    resolution: {integrity: sha512-HDVE69Nw6Y1FPTcmFEmPolfsjMfVB5U823Ij9yWBoM8MdHZ2lA3JVus4xQJ2oRE1riJTlcSLFcgJKWGD7V7hmw==}
     peerDependencies:
       '@lynx-js/react': '*'
       '@sveltejs/kit': '*'
@@ -1046,8 +991,8 @@ packages:
       vue:
         optional: true
 
-  better-call@1.0.19:
-    resolution: {integrity: sha512-sI3GcA1SCVa3H+CDHl8W8qzhlrckwXOTKhqq3OOPXjgn5aTOMIqGY34zLY/pHA6tRRMjTUC3lz5Mi7EbDA24Kw==}
+  better-call@1.1.0:
+    resolution: {integrity: sha512-7CecYG+yN8J1uBJni/Mpjryp8bW/YySYsrGEWgFe048ORASjq17keGjbKI2kHEOSc6u8pi11UxzkJ7jIovQw6w==}
 
   better-sqlite3@12.4.1:
     resolution: {integrity: sha512-3yVdyZhklTiNrtg+4WqHpJpFDd+WHTg2oM7UcR80GqL05AOV0xEJzc6qNvFYoEtE+hRp1n9MpN6/+4yhlGkDXQ==}
@@ -1536,103 +1481,103 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  mjml-accordion@4.17.0:
-    resolution: {integrity: sha512-XAnZGuqphjA3pgmYgTqUPTKhKlnr1tJqi0UvJkTBdJ+hQiwmzsKOCzzEgra8BZF9hB6sk5q8Ldt7OU+ojLdt5A==}
+  mjml-accordion@4.17.1:
+    resolution: {integrity: sha512-xl9oUbMp8aju6b1OZYqv3orE287ofGNEv09h2mFmzRTJxug7nJBFXs2I9v7dUVuWIBRk940PjnIVSuW+9bPvCA==}
 
-  mjml-body@4.17.0:
-    resolution: {integrity: sha512-JFyzC3/Bae2EQdLOnICCeo8tJstn8DdNqvxx9aJmtSx5+9U92dlDDTv1zdUr4ziVNXGKC8srRZ4fN1BIXA4b9Q==}
+  mjml-body@4.17.1:
+    resolution: {integrity: sha512-EfvVVfutARRjJ1jsOxxf2DY/ufqWswv9JKjbwu/Fu8h4havAcdmw2BDmX3vwXEzatqpL1l//YWOKlqUe9ZEs+A==}
 
-  mjml-button@4.17.0:
-    resolution: {integrity: sha512-n2CG5Vj+iFEBcg96SEeTtYf0hr3MeHdMBichGOK3R8hziAnxt0SEgxq0BAVMybIbcztneI91k4KO60ANBSALbQ==}
+  mjml-button@4.17.1:
+    resolution: {integrity: sha512-A9xQwgccPzrwr11izorBsA92THpkrviWkCwlYMxL9V3wgt5YJYDrt4r023HCveqN7b6iTkvqkXeDoIPX/kEDDQ==}
 
-  mjml-carousel@4.17.0:
-    resolution: {integrity: sha512-Iyc/fC99dRGJaHZKLgadT4SdDsRS35nsy6KS/gp9M18YWvuw7WuzCbNW1UwiyXHKjgcfCgTQr5wq5h0zxFqIZg==}
+  mjml-carousel@4.17.1:
+    resolution: {integrity: sha512-pWo/aIgRL3XduckOBVEvbpph3vR4f9maRrbJ8Jfu4NVI6Ws3PQ6wt7HPXHmJlzJlK0gTiAF9f4+I076RVHPG7A==}
 
-  mjml-cli@4.17.0:
-    resolution: {integrity: sha512-wXh2o/YOxf/hJw1JCpDo2uVcFrT0wLJMk7yNjxZzGQAuUpmOCEoRWpEb4Z4bpbsR5bdmQ4y3iHcd+7Lz2cxitQ==}
+  mjml-cli@4.17.1:
+    resolution: {integrity: sha512-1cMWP+yDDBUIjDYnjiKhIPW3NYJrt/W5rqOiB3zOTZQBT722Uh055S3BoLUikKxc+1sQPww4d9dH371zX2HaXA==}
     hasBin: true
 
-  mjml-column@4.17.0:
-    resolution: {integrity: sha512-pyWXCHNiF4w/G+NMO+eL7XUyvBCzxwrm2xFZkY2vA1nz/TA10e4EAbEvT8iCiykBGGlg13C/Z4CuML9gvJPfLg==}
+  mjml-column@4.17.1:
+    resolution: {integrity: sha512-S+oNZaWFP1/TCEgVwVcwqYIyHwwVZWSKLKj4fcWIMUCaHWKuojYrexOGfULDAwTjYEDhZaRDrrq96ulF12wJeQ==}
 
-  mjml-core@4.17.0:
-    resolution: {integrity: sha512-eyoDFWuFnzfE3ObgjAvmThqVePy1Ch8or9dtysOLMfNgjbBIH0zFqO0Hg4wUvLwLhHsWQLTvNi/W0VPP9sC4Qw==}
+  mjml-core@4.17.1:
+    resolution: {integrity: sha512-u2aHbBxFA2uJdS6T1A1ZTGYryPNebHMByRrMPCbe5W8Os+sGiC5gKLhZgjavZteKiMS+09swkvfneNLGYwzBKg==}
 
-  mjml-divider@4.17.0:
-    resolution: {integrity: sha512-Sz5Gnqk6uisrOhwvESKGUrxPI9Bg6SlL88pQ6dNZyd8hxBwV9K9eJrx/nb4c6WGWIzX04tYS5ntGcL0z1vWAqw==}
+  mjml-divider@4.17.1:
+    resolution: {integrity: sha512-KUWvcx1cIDwkN/gDuY37e9Vv+0U5U+xOVOfXRGloSnapYcP0IvmLtLTJeBwvGhwoN30wBiHDGwO8p/7B6CyxqQ==}
 
-  mjml-group@4.17.0:
-    resolution: {integrity: sha512-k0rmZBXL7DoIxdWYz52dm7/5Kj1TmQZ2NvjwrMYi70Npy5lC1KAimhuJDrnSLiBj4sOIxK17Hy1Zgw+y2X2UAA==}
+  mjml-group@4.17.1:
+    resolution: {integrity: sha512-0vOcLm7l4ptLM5rqC6DhCafxIw5+WUrSYLcdUSJxO3AZMGJMxU7fkWeWGowE+PQdgqh6ee1/4RYc2qJDWtHW5A==}
 
-  mjml-head-attributes@4.17.0:
-    resolution: {integrity: sha512-kDRD64YsN6IiarDjrikkBL5fMDEhIkBl/eaun3EvHzQuugSKBZzTdBwgRHuEca0ZHTejOiB+RSxhgp5yd8RPGw==}
+  mjml-head-attributes@4.17.1:
+    resolution: {integrity: sha512-p+g33eI4xyHb9Yv28zIXnNdsXQYvoGex/GvoGumwyxu6O8OOvPk1mIV87SjDISQHosJJMcTiZVd/RfBlwnZpGA==}
 
-  mjml-head-breakpoint@4.17.0:
-    resolution: {integrity: sha512-624Ctnsu8JYaO5wdTKOiXtHSALz4WsD1yO37lRPfzUm73L6LfaOr5dmonQ1GdqGgnk9lyk/X/U4rhz3Z3BUXLA==}
+  mjml-head-breakpoint@4.17.1:
+    resolution: {integrity: sha512-vjsNAgdLnwqmkVlIENbH6odK6ZARiNQvsm+1o8CLo9ymw82WhIEbOnAeCfoddumZ6h2ywbZuBZzS23jJi13MUQ==}
 
-  mjml-head-font@4.17.0:
-    resolution: {integrity: sha512-/8ICA7tFpueJlpXqMFamJD/A1HmMxgwPte+N0XmOw86PBZr+NoBN23KVgh7o1YLC/zma/GAhaEQELhOcVX59YQ==}
+  mjml-head-font@4.17.1:
+    resolution: {integrity: sha512-Xeih/vqocR1BoBLbh8Sn67kNkfLsyHeZ7Z/3nyNz7TriZ//TGAR/PGTFFghQlXyX1BCtSx/eFoxMkKKswLYReA==}
 
-  mjml-head-html-attributes@4.17.0:
-    resolution: {integrity: sha512-NXPCJL+wQ+NYVzVmGYbm7snMq3wnvLGA0/ZVUfljjIaxjrw27bqT3seUvXyrriNS1SEqgxfc8LyKVrJtN0P2Ag==}
+  mjml-head-html-attributes@4.17.1:
+    resolution: {integrity: sha512-O7YzEAFtSELB7wVYV808g6JcxXrzHk5glDdzzCEhDR4bjPHewSUpkrYOqvt0BdfdFsvqH4zm4vsJImUMW692HQ==}
 
-  mjml-head-preview@4.17.0:
-    resolution: {integrity: sha512-CTr44WZpiASNHoRv9clCcgU5Iiyts3VTFEtE8fWEAwN6/8qDgfztRM2MiJiTgXkBOHz0oON3cqT0M7dYA2HRZg==}
+  mjml-head-preview@4.17.1:
+    resolution: {integrity: sha512-XL+8N9yrADJSw4gX9lvDcp31ghGy8WavenVO8UhxPyhLu/sMJ9lFXLbTB4z5JU1z4t/HPEp/GtgMGxAbr+QrQQ==}
 
-  mjml-head-style@4.17.0:
-    resolution: {integrity: sha512-KtYOkpFu1wI22ZiWKvnJ/SVE3pRh30A1vMzC9hbIUifiR9Znz5I4p7b5E0lXeXnoYFE0iHNpuBYiHqzeoTnTZA==}
+  mjml-head-style@4.17.1:
+    resolution: {integrity: sha512-YTjtqZAG0hD0aYwk02/8hS1W+T4nDUhVCBFmcxL/aTSrRbJQew0dSVtCvqNpAsbIJCUg/mUxx6pKKzRPdN+FtA==}
 
-  mjml-head-title@4.17.0:
-    resolution: {integrity: sha512-nrSYMPbjDoaiTp3anl0d95vTGuzgZFm2a6O+0p/9Tcxd+eaKALcuhYgm10lvX2fsV4g8aDpBD+o8hIOfjIl+Gw==}
+  mjml-head-title@4.17.1:
+    resolution: {integrity: sha512-cUO4b7tDuX1BLu6XYnPgG40o3pBUCkT+Yzu5DGsvRxvCWougJFN68ocF6zcc7OOanmLgBYlJevQKUyT6W5Rp0g==}
 
-  mjml-head@4.17.0:
-    resolution: {integrity: sha512-zccGlCFQuREWw7/pRvvR+xc/xucWFn26tHjezbfgpM1HE3ojF4yOlmdvi6oGHwPZnVI1Yxha5RvVoXhxSo3rWQ==}
+  mjml-head@4.17.1:
+    resolution: {integrity: sha512-+DBJ6UvkpYkKJGJKqo8luucDGbg9+rQZKytl/4VOGTE8bmbrKFixY3lkfmBrSkQ7/t6L4dDVSXywl6H91JsL+g==}
 
-  mjml-hero@4.17.0:
-    resolution: {integrity: sha512-925+xA1o4jMaqmme0/E6qtP1zqUnzIqW6yzIMlUSNMnBmvScYtHuM2TeRM2SLUkXUTedX/CxSdRzq01+0+XyhA==}
+  mjml-hero@4.17.1:
+    resolution: {integrity: sha512-WDmNVJ4+xHLrkYOrGrq23hUYDVG3iFSyk/vIC/KlcG5Kebu5vVWbe6n3ZEucatPuYn/EUVV1ofIJM6dnXXfkGQ==}
 
-  mjml-image@4.17.0:
-    resolution: {integrity: sha512-QhtwYzsVckCZigG+rhKwtL/7JHnwsFiLX+7HAKVhKZUR/vMrv5RhQmbxFV02jfonsZ7IaK7e4DtPeM1iG3HlnQ==}
+  mjml-image@4.17.1:
+    resolution: {integrity: sha512-ZIFXmP2Fb77vvX8SBQYbrAPPvkqx5GqJ7AqVWteQk4iz6nJf8GspZiotWyL4LvgZzf0B81aQCB11y7+RvAfVvw==}
 
-  mjml-migrate@4.17.0:
-    resolution: {integrity: sha512-9s9f/lMZpQiu4/jQ87NMxFfKw4fV3Qfwfh9bJzrz626cBNv/9UwI/Lwxf4YPlpIbdE5a1hsXbCtQ4svcB2pUYw==}
+  mjml-migrate@4.17.1:
+    resolution: {integrity: sha512-Rb66BdvuV8fGYdQJzvLK0naWGI8G9smzm1OJDjdhcCrQU3BfTW/BiTS9FP5G0W73kFJe//vlHCDZ3uBIr6REAA==}
     hasBin: true
 
-  mjml-navbar@4.17.0:
-    resolution: {integrity: sha512-428mWaJtOU45gyg+kO2FxsEGxKraOXNBdf4ZZ18BbJfBQCpDMZamCi09jT5Jl6elwsCHHoES06kOwF69QRivug==}
+  mjml-navbar@4.17.1:
+    resolution: {integrity: sha512-SWtovALlb+tM2lu2stlsKItrM/Tc/YxWiCm+UtLuOvkBmouBX/vASufaFab3VPAq/pGJKF9nFGX2eWoJCGA4rA==}
 
-  mjml-parser-xml@4.17.0:
-    resolution: {integrity: sha512-A3hhVVNthl/wLNpcBaVVPDiNaA3DI0vuZXZkIWU4fT61jytjjcPlh0TEVknZ+sf1o/cKZgQNcNRjcQDaprRysg==}
+  mjml-parser-xml@4.17.1:
+    resolution: {integrity: sha512-8cc1+cI1+ymeKmiaioZMaIzg8K9SmCErr0WOdS0n90pnt5eLqGQEh3RQJv7VoucO5aoJXgAnCSGeCstVXvZykg==}
 
-  mjml-preset-core@4.17.0:
-    resolution: {integrity: sha512-IuK+vhKEgQnmqq3VslJ6evDlzDrl6ZHxILdnKT/FBeDAH+f39+FsoVSiw9NsP5MIb798ltnGL9SMn1dK0qtMVA==}
+  mjml-preset-core@4.17.1:
+    resolution: {integrity: sha512-cFfelKeRJNG+WZv+kGWjjHrQam5PiHH8JaC3vvjl1eEwLcR2nbaYArlnLTIzgG+M3+cBlIl0Ru3Say5ZqWAcxw==}
 
-  mjml-raw@4.17.0:
-    resolution: {integrity: sha512-Cc858i+4g8bNvWRqg1mPxQ3RYaRA6pRAzTlTjjftmsjBFGnK5BAhLszfoJyndQaldbQbSkoikYfN8wCPGTsQNw==}
+  mjml-raw@4.17.1:
+    resolution: {integrity: sha512-CnfgXh+c8u/jOuVjmv9N6Hxal5U4PPJFVY1JFRRJr/7Tcxl8aJUF03mBjqW9zAzoYO1bRcgyG3clchyEwwXQ8g==}
 
-  mjml-section@4.17.0:
-    resolution: {integrity: sha512-c8LEsC7wXR8atKJhalx9Tpkka4Ld/HEkJtPBNQ58g70/dgcWbjR6p9hWf175jlt1QlmK0CduxBoCL5j/1B2dbg==}
+  mjml-section@4.17.1:
+    resolution: {integrity: sha512-YrkvcBgJw2NBnPirjuVU4AoqwySZzOovm5sfryID9I59EmmG+lbBJOnv/v/5wXQSlw2a4n1+VX2sCUcH5/O5sA==}
 
-  mjml-social@4.17.0:
-    resolution: {integrity: sha512-y4Rv3zegJRDGAXHa8xJ41qXbBYvUQGGUASPhhxeAV0TNMExosvLbeTFTPNK/7Jkni/XsBkkK1Fr/7I7yMznLTw==}
+  mjml-social@4.17.1:
+    resolution: {integrity: sha512-Agp6CHJn7SwD+cckCxibZ/32luTzAiDJDlKH0SjQ+9NvSoGskkhii3yOqtYnJ+t3NmQkxpRkXOnUN4GEbupghA==}
 
-  mjml-spacer@4.17.0:
-    resolution: {integrity: sha512-lNsgsRLYlvyiS3cHJ+Bk2gY0quoNEa2PaPZqMxAqwoWm5ifk9lxD7YwDA5yl8mr7Pdm4iMDpAwLlZotM6Y+gLQ==}
+  mjml-spacer@4.17.1:
+    resolution: {integrity: sha512-TxXDosuRzuoQNdceG47TKy+NWbwIGZmVDV/4XRtkcPHEvlsHpIIzn2+zzj+xrA6qh5Z+zlXL+x8ZpWMqrUoKfQ==}
 
-  mjml-table@4.17.0:
-    resolution: {integrity: sha512-aKRELobGsgO/WnJ7oyKoQ834LUDvdY7yMckQiAvJjyp4QxFe0xMQUBg0MP2YxUstMd13OHqHgHCoDXvgHoHs0A==}
+  mjml-table@4.17.1:
+    resolution: {integrity: sha512-AcAcsNrpzTOsNc0X0i0+5+iNNGEnYjwn9qodF/413yuWDSH9p7SL8vFuI3Snmgv9s1dR+BKDiF8uPt4XTOMlzA==}
 
-  mjml-text@4.17.0:
-    resolution: {integrity: sha512-IYxnD9mlqjCQ9ffleYOPfpzVOb9BrXBwAQU6SEx3aMAmRt4Kv9HrHrtsMvHuaocGizOx5fXM76vRjylXHg+t1g==}
+  mjml-text@4.17.1:
+    resolution: {integrity: sha512-pOrz8tRU3hReKd+K69dJmiVndC0+gB5IfVKIK3fdvYMb9laZBAstkXW0j5wn/0Af4FZSlJkDRLM7Ylxbh1+fqQ==}
 
-  mjml-validator@4.17.0:
-    resolution: {integrity: sha512-5H+aEM+TjnWk8fa68x5ki0e1fkUOt5C79H99koZGuGay67R10+rCe9lm/BinmsbfVAJGl982yH8pbYxC8o5g1Q==}
+  mjml-validator@4.17.1:
+    resolution: {integrity: sha512-0Au5L5fIfAzOJpQG4PkpFeV0mbzCgjCTu5XbG7pJX4Wup72TGYwrA6Aq2yAdlx17kFPWThSZxeB3Xpd3/kwqOg==}
 
-  mjml-wrapper@4.17.0:
-    resolution: {integrity: sha512-ZX7uxYERwNnBJ3EAJWhk0qyb71wuVxn2Iq2iMQbQ5+6pQoztaSVMIoBLqlSNotOW1cMtbxc2phmi1VC6Dh1xOg==}
+  mjml-wrapper@4.17.1:
+    resolution: {integrity: sha512-c0bCgXCwffI4krnQYU0Zp8ifGkYMgE7a65NAWXlV3AWEfVmjDlhCcD8LBfZ8UfY8zR3Che8pnunowPZfwh0Nxg==}
 
-  mjml@4.17.0:
-    resolution: {integrity: sha512-XIDf+2YM3HZXeZ71K03TS2XBx4Ddck1t8ujBM5+FsBueY3zXeChzsV6eYNaP/S3YG85g+rPj0bqP6aaRYj7Djg==}
+  mjml@4.17.1:
+    resolution: {integrity: sha512-aqy5EVZuwXIINl+d7vC1Fn+MzMfIU4qxCx2TUHnGJxYONrtNIgSQEDlgB2ns2oK8a8WgPuEJCZBYwRE+5ZFcng==}
     hasBin: true
 
   mkdirp-classic@0.5.3:
@@ -1770,13 +1715,6 @@ packages:
   pump@3.0.3:
     resolution: {integrity: sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==}
 
-  pvtsutils@1.3.6:
-    resolution: {integrity: sha512-PLgQXQ6H2FWCaeRak8vvk1GW462lMxB5s3Jm673N82zI4vqtVUPuZdffdZbPDFRoU8kAhItWFtPCWiPpp4/EDg==}
-
-  pvutils@1.1.3:
-    resolution: {integrity: sha512-pMpnA0qRdFp32b1sJl1wOJNxZLQ2cbQx+k6tjNtZ8CpvVhNqEPRgivZ2WOUev2YMajecdH7ctUPDvEe87nariQ==}
-    engines: {node: '>=6.0.0'}
-
   quansync@0.2.11:
     resolution: {integrity: sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==}
 
@@ -1798,9 +1736,6 @@ packages:
   real-require@0.2.0:
     resolution: {integrity: sha512-57frrGM/OCTLqLOAh0mhVA9VBMHd+9U7Zb2THMGdBUoZVOtGbJzjxsYGDJ3A9AYYCP4hn6y1TVbaOfzWtm5GFg==}
     engines: {node: '>= 12.13.0'}
-
-  reflect-metadata@0.2.2:
-    resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
 
   relateurl@0.2.7:
     resolution: {integrity: sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog==}
@@ -1916,15 +1851,8 @@ packages:
   ts-pattern@5.9.0:
     resolution: {integrity: sha512-6s5V71mX8qBUmlgbrfL33xDUwO0fq48rxAu2LBE11WBeGdpCPOsXksQbZJHvHwhrd3QjUusd3mAOM5Gg0mFBLg==}
 
-  tslib@1.14.1:
-    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
-
-  tsyringe@4.10.0:
-    resolution: {integrity: sha512-axr3IdNuVIxnaK5XGEUFTu3YmAQ6lllgrvqfEoR16g/HGnYY/6We4oWENtAnzK6/LpJ2ur9PAb80RBt7/U4ugw==}
-    engines: {node: '>= 6.0.0'}
 
   tunnel-agent@0.6.0:
     resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
@@ -1937,9 +1865,6 @@ packages:
     resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
     engines: {node: '>=0.8.0'}
     hasBin: true
-
-  uncrypto@0.1.3:
-    resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
 
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
@@ -2398,26 +2323,22 @@ snapshots:
 
   '@babel/runtime@7.28.4': {}
 
-  '@better-auth/core@1.3.34(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.19)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)':
+  '@better-auth/core@1.4.1(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.1.0)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)':
     dependencies:
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
-      better-call: 1.0.19
+      '@standard-schema/spec': 1.0.0
+      better-call: 1.1.0
       jose: 6.1.0
       kysely: 0.28.8
       nanostores: 1.0.1
       zod: 4.1.12
 
-  '@better-auth/telemetry@1.3.34(better-call@1.0.19)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)':
+  '@better-auth/telemetry@1.4.1(@better-auth/core@1.4.1(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.1.0)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1))':
     dependencies:
-      '@better-auth/core': 1.3.34(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.19)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
+      '@better-auth/core': 1.4.1(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.1.0)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
-    transitivePeerDependencies:
-      - better-call
-      - jose
-      - kysely
-      - nanostores
 
   '@better-auth/utils@0.3.0': {}
 
@@ -2579,14 +2500,12 @@ snapshots:
   '@esbuild/win32-x64@0.25.11':
     optional: true
 
-  '@hexagon/base64@1.1.28': {}
-
-  '@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.6)':
+  '@hono/standard-validator@0.2.0(@standard-schema/spec@1.0.0)(hono@4.10.6)':
     dependencies:
       '@standard-schema/spec': 1.0.0
       hono: 4.10.6
 
-  '@hono/zod-validator@0.7.4(hono@4.10.6)(zod@4.1.12)':
+  '@hono/zod-validator@0.7.5(hono@4.10.6)(zod@4.1.12)':
     dependencies:
       hono: 4.10.6
       zod: 4.1.12
@@ -2599,8 +2518,6 @@ snapshots:
       strip-ansi-cjs: strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
-
-  '@levischuck/tiny-cbor@0.2.11': {}
 
   '@maca134/hono-passport@1.2.2(@maca134/hono-session@1.2.0(hono@4.10.6))(hono@4.10.6)':
     dependencies:
@@ -2622,139 +2539,25 @@ snapshots:
 
   '@one-ini/wasm@0.1.1': {}
 
-  '@peculiar/asn1-android@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-cms@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      '@peculiar/asn1-x509-attr': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-csr@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-ecc@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-pfx@2.5.0':
-    dependencies:
-      '@peculiar/asn1-cms': 2.5.0
-      '@peculiar/asn1-pkcs8': 2.5.0
-      '@peculiar/asn1-rsa': 2.5.0
-      '@peculiar/asn1-schema': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-pkcs8@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-pkcs9@2.5.0':
-    dependencies:
-      '@peculiar/asn1-cms': 2.5.0
-      '@peculiar/asn1-pfx': 2.5.0
-      '@peculiar/asn1-pkcs8': 2.5.0
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      '@peculiar/asn1-x509-attr': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-rsa@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-schema@2.5.0':
-    dependencies:
-      asn1js: 3.0.6
-      pvtsutils: 1.3.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-x509-attr@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      asn1js: 3.0.6
-      tslib: 2.8.1
-
-  '@peculiar/asn1-x509@2.5.0':
-    dependencies:
-      '@peculiar/asn1-schema': 2.5.0
-      asn1js: 3.0.6
-      pvtsutils: 1.3.6
-      tslib: 2.8.1
-
-  '@peculiar/x509@1.14.0':
-    dependencies:
-      '@peculiar/asn1-cms': 2.5.0
-      '@peculiar/asn1-csr': 2.5.0
-      '@peculiar/asn1-ecc': 2.5.0
-      '@peculiar/asn1-pkcs9': 2.5.0
-      '@peculiar/asn1-rsa': 2.5.0
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      pvtsutils: 1.3.6
-      reflect-metadata: 0.2.2
-      tslib: 2.8.1
-      tsyringe: 4.10.0
-
   '@pinojs/redact@0.4.0': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@scalar/core@0.3.22':
+  '@scalar/core@0.3.23':
     dependencies:
-      '@scalar/types': 0.4.0
+      '@scalar/types': 0.5.0
 
-  '@scalar/hono-api-reference@0.9.24(hono@4.10.6)':
+  '@scalar/hono-api-reference@0.9.25(hono@4.10.6)':
     dependencies:
-      '@scalar/core': 0.3.22
+      '@scalar/core': 0.3.23
       hono: 4.10.6
 
-  '@scalar/openapi-types@0.5.1':
+  '@scalar/types@0.5.0':
     dependencies:
-      zod: 4.1.11
-
-  '@scalar/types@0.4.0':
-    dependencies:
-      '@scalar/openapi-types': 0.5.1
       nanoid: 5.1.5
       type-fest: 5.0.0
       zod: 4.1.11
-
-  '@simplewebauthn/browser@13.2.2': {}
-
-  '@simplewebauthn/server@13.2.2':
-    dependencies:
-      '@hexagon/base64': 1.1.28
-      '@levischuck/tiny-cbor': 0.2.11
-      '@peculiar/asn1-android': 2.5.0
-      '@peculiar/asn1-ecc': 2.5.0
-      '@peculiar/asn1-rsa': 2.5.0
-      '@peculiar/asn1-schema': 2.5.0
-      '@peculiar/asn1-x509': 2.5.0
-      '@peculiar/x509': 1.14.0
 
   '@smithy/abort-controller@4.2.3':
     dependencies:
@@ -3129,7 +2932,7 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@types/nodemailer@7.0.3':
+  '@types/nodemailer@7.0.4':
     dependencies:
       '@aws-sdk/client-sesv2': 3.914.0
       '@types/node': 24.9.1
@@ -3194,12 +2997,6 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  asn1js@3.0.6:
-    dependencies:
-      pvtsutils: 1.3.6
-      pvutils: 1.1.3
-      tslib: 2.8.1
-
   atomic-sleep@1.0.0: {}
 
   await-to-ts@1.0.6: {}
@@ -3209,30 +3006,28 @@ snapshots:
   base64-js@1.5.1:
     optional: true
 
-  better-auth@1.3.34:
+  better-auth@1.4.1:
     dependencies:
-      '@better-auth/core': 1.3.34(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.19)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
-      '@better-auth/telemetry': 1.3.34(better-call@1.0.19)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
+      '@better-auth/core': 1.4.1(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.1.0)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
+      '@better-auth/telemetry': 1.4.1(@better-auth/core@1.4.1(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.1.0)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1))
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
       '@noble/ciphers': 2.0.1
       '@noble/hashes': 2.0.1
-      '@simplewebauthn/browser': 13.2.2
-      '@simplewebauthn/server': 13.2.2
-      better-call: 1.0.19
+      '@standard-schema/spec': 1.0.0
+      better-call: 1.1.0
       defu: 6.1.4
       jose: 6.1.0
       kysely: 0.28.8
       nanostores: 1.0.1
       zod: 4.1.12
 
-  better-call@1.0.19:
+  better-call@1.1.0:
     dependencies:
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
       rou3: 0.5.1
       set-cookie-parser: 2.7.1
-      uncrypto: 0.1.3
 
   better-sqlite3@12.4.1:
     dependencies:
@@ -3577,14 +3372,14 @@ snapshots:
 
   he@1.2.0: {}
 
-  hono-openapi@1.1.1(@hono/standard-validator@0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.6))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.6)(openapi-types@12.1.3):
+  hono-openapi@1.1.1(@hono/standard-validator@0.2.0(@standard-schema/spec@1.0.0)(hono@4.10.6))(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-community/standard-openapi@0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12))(@types/json-schema@7.0.15)(hono@4.10.6)(openapi-types@12.1.3):
     dependencies:
       '@standard-community/standard-json': 0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12)
       '@standard-community/standard-openapi': 0.2.8(@standard-community/standard-json@0.3.5(@standard-schema/spec@1.0.0)(@types/json-schema@7.0.15)(quansync@0.2.11)(zod@4.1.12))(@standard-schema/spec@1.0.0)(openapi-types@12.1.3)(zod-openapi@5.4.3(zod@4.1.12))(zod@4.1.12)
       '@types/json-schema': 7.0.15
       openapi-types: 12.1.3
     optionalDependencies:
-      '@hono/standard-validator': 0.1.5(@standard-schema/spec@1.0.0)(hono@4.10.6)
+      '@hono/standard-validator': 0.2.0(@standard-schema/spec@1.0.0)(hono@4.10.6)
       hono: 4.10.6
 
   hono-pino@0.10.3(hono@4.10.6)(pino@10.1.0):
@@ -3708,39 +3503,39 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  mjml-accordion@4.17.0:
+  mjml-accordion@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-body@4.17.0:
+  mjml-body@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-button@4.17.0:
+  mjml-button@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-carousel@4.17.0:
+  mjml-carousel@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-cli@4.17.0:
+  mjml-cli@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       chokidar: 3.6.0
@@ -3749,23 +3544,23 @@ snapshots:
       js-beautify: 1.15.4
       lodash: 4.17.21
       minimatch: 9.0.5
-      mjml-core: 4.17.0
-      mjml-migrate: 4.17.0
-      mjml-parser-xml: 4.17.0
-      mjml-validator: 4.17.0
+      mjml-core: 4.17.1
+      mjml-migrate: 4.17.1
+      mjml-parser-xml: 4.17.1
+      mjml-validator: 4.17.1
       yargs: 17.7.2
     transitivePeerDependencies:
       - encoding
 
-  mjml-column@4.17.0:
+  mjml-column@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-core@4.17.0:
+  mjml-core@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       cheerio: 1.0.0-rc.12
@@ -3774,234 +3569,234 @@ snapshots:
       js-beautify: 1.15.4
       juice: 10.0.1
       lodash: 4.17.21
-      mjml-migrate: 4.17.0
-      mjml-parser-xml: 4.17.0
-      mjml-validator: 4.17.0
+      mjml-migrate: 4.17.1
+      mjml-parser-xml: 4.17.1
+      mjml-validator: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-divider@4.17.0:
+  mjml-divider@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-group@4.17.0:
+  mjml-group@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head-attributes@4.17.0:
+  mjml-head-attributes@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head-breakpoint@4.17.0:
+  mjml-head-breakpoint@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head-font@4.17.0:
+  mjml-head-font@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head-html-attributes@4.17.0:
+  mjml-head-html-attributes@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head-preview@4.17.0:
+  mjml-head-preview@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head-style@4.17.0:
+  mjml-head-style@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head-title@4.17.0:
+  mjml-head-title@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-head@4.17.0:
+  mjml-head@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-hero@4.17.0:
+  mjml-hero@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-image@4.17.0:
+  mjml-image@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-migrate@4.17.0:
+  mjml-migrate@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       js-beautify: 1.15.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
-      mjml-parser-xml: 4.17.0
+      mjml-core: 4.17.1
+      mjml-parser-xml: 4.17.1
       yargs: 17.7.2
     transitivePeerDependencies:
       - encoding
 
-  mjml-navbar@4.17.0:
+  mjml-navbar@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-parser-xml@4.17.0:
+  mjml-parser-xml@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       detect-node: 2.1.0
       htmlparser2: 9.1.0
       lodash: 4.17.21
 
-  mjml-preset-core@4.17.0:
+  mjml-preset-core@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
-      mjml-accordion: 4.17.0
-      mjml-body: 4.17.0
-      mjml-button: 4.17.0
-      mjml-carousel: 4.17.0
-      mjml-column: 4.17.0
-      mjml-divider: 4.17.0
-      mjml-group: 4.17.0
-      mjml-head: 4.17.0
-      mjml-head-attributes: 4.17.0
-      mjml-head-breakpoint: 4.17.0
-      mjml-head-font: 4.17.0
-      mjml-head-html-attributes: 4.17.0
-      mjml-head-preview: 4.17.0
-      mjml-head-style: 4.17.0
-      mjml-head-title: 4.17.0
-      mjml-hero: 4.17.0
-      mjml-image: 4.17.0
-      mjml-navbar: 4.17.0
-      mjml-raw: 4.17.0
-      mjml-section: 4.17.0
-      mjml-social: 4.17.0
-      mjml-spacer: 4.17.0
-      mjml-table: 4.17.0
-      mjml-text: 4.17.0
-      mjml-wrapper: 4.17.0
+      mjml-accordion: 4.17.1
+      mjml-body: 4.17.1
+      mjml-button: 4.17.1
+      mjml-carousel: 4.17.1
+      mjml-column: 4.17.1
+      mjml-divider: 4.17.1
+      mjml-group: 4.17.1
+      mjml-head: 4.17.1
+      mjml-head-attributes: 4.17.1
+      mjml-head-breakpoint: 4.17.1
+      mjml-head-font: 4.17.1
+      mjml-head-html-attributes: 4.17.1
+      mjml-head-preview: 4.17.1
+      mjml-head-style: 4.17.1
+      mjml-head-title: 4.17.1
+      mjml-hero: 4.17.1
+      mjml-image: 4.17.1
+      mjml-navbar: 4.17.1
+      mjml-raw: 4.17.1
+      mjml-section: 4.17.1
+      mjml-social: 4.17.1
+      mjml-spacer: 4.17.1
+      mjml-table: 4.17.1
+      mjml-text: 4.17.1
+      mjml-wrapper: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-raw@4.17.0:
+  mjml-raw@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-section@4.17.0:
+  mjml-section@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-social@4.17.0:
+  mjml-social@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-spacer@4.17.0:
+  mjml-spacer@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-table@4.17.0:
+  mjml-table@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-text@4.17.0:
+  mjml-text@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
+      mjml-core: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml-validator@4.17.0:
+  mjml-validator@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
 
-  mjml-wrapper@4.17.0:
+  mjml-wrapper@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
       lodash: 4.17.21
-      mjml-core: 4.17.0
-      mjml-section: 4.17.0
+      mjml-core: 4.17.1
+      mjml-section: 4.17.1
     transitivePeerDependencies:
       - encoding
 
-  mjml@4.17.0:
+  mjml@4.17.1:
     dependencies:
       '@babel/runtime': 7.28.4
-      mjml-cli: 4.17.0
-      mjml-core: 4.17.0
-      mjml-migrate: 4.17.0
-      mjml-preset-core: 4.17.0
-      mjml-validator: 4.17.0
+      mjml-cli: 4.17.1
+      mjml-core: 4.17.1
+      mjml-migrate: 4.17.1
+      mjml-preset-core: 4.17.1
+      mjml-validator: 4.17.1
     transitivePeerDependencies:
       - encoding
 
@@ -4143,12 +3938,6 @@ snapshots:
       once: 1.4.0
     optional: true
 
-  pvtsutils@1.3.6:
-    dependencies:
-      tslib: 2.8.1
-
-  pvutils@1.1.3: {}
-
   quansync@0.2.11: {}
 
   quick-format-unescaped@4.0.4: {}
@@ -4173,8 +3962,6 @@ snapshots:
       picomatch: 2.3.1
 
   real-require@0.2.0: {}
-
-  reflect-metadata@0.2.2: {}
 
   relateurl@0.2.7: {}
 
@@ -4287,13 +4074,7 @@ snapshots:
 
   ts-pattern@5.9.0: {}
 
-  tslib@1.14.1: {}
-
   tslib@2.8.1: {}
-
-  tsyringe@4.10.0:
-    dependencies:
-      tslib: 1.14.1
 
   tunnel-agent@0.6.0:
     dependencies:
@@ -4305,8 +4086,6 @@ snapshots:
       tagged-tag: 1.0.0
 
   uglify-js@3.19.3: {}
-
-  uncrypto@0.1.3: {}
 
   undici-types@6.21.0: {}
 
