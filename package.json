@@ -25,7 +25,7 @@
 		"nodemailer": "^7.0.12",
 		"pino": "^10.1.0",
 		"ts-pattern": "^5.9.0",
-		"zod": "^4.3.4",
+		"zod": "^4.3.5",
 		"zod-openapi": "5"
 	},
 	"devDependencies": {
