@@ -5,6 +5,8 @@
 		"db:migrate": "drizzle-kit migrate",
 		"db:generate": "drizzle-kit generate",
 		"auth:generate": "bunx @better-auth/cli generate --output ./src/repo/schema/auth.schema.ts",
+		"lint": "biome check",
+		"format": "biome format",
 		"dev": "bun run --hot src/index.ts"
 	},
 	"dependencies": {
