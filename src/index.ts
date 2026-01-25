@@ -33,7 +33,7 @@ app.use(
 app.use(prettyJSON());
 app.use(
 	cors({
-		origin: ["http://localhost:4000", "http://localhost:3002"],
+		origin: ["*"],
 		credentials: true,
 	}),
 );
